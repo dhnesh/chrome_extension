@@ -1,0 +1,39 @@
+{
+	"manifest_version":2,
+	"name":"Wiki-It",
+	"version":"1.0",
+	"description":"Wiki Any Word",
+	"icons":
+			{
+				"128":"images/dummy.png",
+				"48":"images/dummy.png",
+				"16":"images/dummy.png"
+					
+			},
+	
+	
+	"background":{
+
+		// if persistent is false its a event page else background page
+		"scripts": ["background.js"],
+		"persistent":false  
+
+	},
+
+	"content_scripts":[
+		{ 
+			"matches": ["http://*/*","https://*/*"],
+			"js":["jquery-3.3.1.min.js","inject.js"]
+			
+
+		}	
+	],
+
+	"permissions":[
+
+		"tabs","contextMenus","https://www.stackoverflow.com/*"
+
+
+	]
+
+}
